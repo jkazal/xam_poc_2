@@ -18,8 +18,7 @@ namespace BlankApp1.Infra.Distant.Implementations
         {
             var handler = new HttpClientHandler
             {
-                UseProxy = true,
-                Proxy = new WebProxy("http://dijproxy.mcs.priv:8080", false) // Or whatever Charles is set up as
+                UseProxy = false
             };
             var client = new HttpClient(handler)
             {
