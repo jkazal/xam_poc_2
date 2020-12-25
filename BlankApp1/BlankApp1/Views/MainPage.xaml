@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlankApp1.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Button 
+            Text="Go to 2nd page"
+            Command="{Binding NavigateTo2ndPageCommand}"
+        />
+        <Label Text="Welcome to jkazal xam poc!" />
+        <Label Text="{Binding OSName,  Mode=TwoWay}" />
+        <Label Text="{Binding BasicBindString,  Mode=TwoWay}" />
+        <Label Text="Nonbound string" />
+        <CollectionView 
+            ItemsSource="{Binding SWChars,  Mode=TwoWay}"
+            SelectedItem="{Binding Chara,  Mode=TwoWay}"
+            SelectionMode="Single"
+            >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label
+                        Text="{Binding Name,  Mode=TwoWay}"
+                    />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

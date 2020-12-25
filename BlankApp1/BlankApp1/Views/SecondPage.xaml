@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BlankApp1.Converters"
+             x:Class="BlankApp1.Views.SecondPage"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:PocConverter x:Key="pocToPhrase" />
+            <!-- Note: ceci pourrait etre mis dans app.xaml pour etre utilisable dans toute page -->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="First param!" />
+        <Label Text=
+            "{
+                Binding FirstParam,
+                Converter={StaticResource pocToPhrase}
+            }"
+        />
+    </StackLayout>
+
+</ContentPage>
