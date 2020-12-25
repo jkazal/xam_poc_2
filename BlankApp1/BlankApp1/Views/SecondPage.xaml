@@ -18,6 +18,15 @@
                 Converter={StaticResource pocToPhrase}
             }"
         />
+
+        <ListView x:Name="charListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding ID}"
+                          Detail="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
